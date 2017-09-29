@@ -72,7 +72,7 @@ pdf("Sensitivity_parametric.pdf")
 		d_k_range_avrT=mean(d_k_range),t_ind_range=1:250),mgp=c(2.5,1,0),
 		type="l",col="darkred",lwd=5,main="All parameters are mean",
 		xlab="Water temperature, °C",ylab="Condenser temperature sensitivity coefficient",
-		panel.first=grid(col="gray30"),sub="Effect of a",cex.axis=1.5,cex.lab=1.7)
+		panel.first=grid(col="gray30"),sub="",cex.axis=1.5,cex.lab=1.7)
 	#
 	for (i in seq(from=2,along.with=a_range[-1])) {
 		lines(x=t_range[1:250],y=Sens_avr_byW_alongT(a_avrT=a_range[i],m_avrT=mean(m_range),t_ind_range=1:250,
@@ -114,9 +114,9 @@ pdf("Sensitivity_parametric.pdf")
 	lines(x=t_range[1:250],y=Sens_avr_byW_alongT(a_avrT=mean(a_range),m_avrT=mean(m_range),t_ind_range=1:250,
 		d_k_range_avrT=mean(d_k_range)),type="l",col="darkgreen",lwd=2,lty=5)
 	text(x=t_range[200],y=0.2+(Sens_avr_byW_alongT(a_avrT=mean(a_range),m_avrT=mean(m_range),
-		t_ind_range=200,d_k_range_avrT=d_k_range[1])),labels="max(a)",cex=2)
+		t_ind_range=200,d_k_range_avrT=d_k_range[1])),labels="max(d_k)",cex=2)
 	text(x=t_range[80],y=-0.1+(Sens_avr_byW_alongT(a_avrT=mean(a_range),m_avrT=mean(m_range),
-		t_ind_range=80,d_k_range_avrT=d_k_range[1])),labels="min(a)",cex=2)	
+		t_ind_range=80,d_k_range_avrT=d_k_range[1])),labels="min(d_k)",cex=2)	
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # I3) Effect of m by mean values of other parameters
 m_range_param<-seq(from=min(m_range),to=max(m_range),length.out=20)
@@ -139,9 +139,9 @@ m_range_param<-seq(from=min(m_range),to=max(m_range),length.out=20)
 	lines(x=t_range[1:250],y=Sens_avr_byW_alongT(a_avrT=mean(a_range),m_avrT=mean(m_range),t_ind_range=1:250,
 		d_k_range_avrT=mean(d_k_range)),type="l",col="darkgreen",lwd=2,lty=5)
 	text(x=t_range[200],y=0.14+(Sens_avr_byW_alongT(a_avrT=mean(a_range),m_avrT=m_range_param[1],
-		t_ind_range=200,d_k_range_avrT=mean(d_k_range))),labels="max(a)",cex=2)
+		t_ind_range=200,d_k_range_avrT=mean(d_k_range))),labels="max(m)",cex=2)
 	text(x=t_range[70],y=-0.17+(Sens_avr_byW_alongT(a_avrT=mean(a_range),m_avrT=m_range_param[1],
-		t_ind_range=70,d_k_range_avrT=mean(d_k_range))),labels="min(a)",cex=2)
+		t_ind_range=70,d_k_range_avrT=mean(d_k_range))),labels="min(m)",cex=2)
 dev.off()
 #***********************************************************************************************************************
 #								DETAILS
